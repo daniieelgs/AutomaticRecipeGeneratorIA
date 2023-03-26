@@ -1,0 +1,280 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400;600&display=swap');
+:root{
+    --color-bg-theme: #fff;
+    --color-fg-text: #000;
+    --color-bg-btn: #424649;
+}
+
+body.black-theme{
+
+    --color-bg-theme: #222222;
+    --color-fg-text: #fff;
+    --color-bg-btn: #f8f9fa;
+
+    background-color: var(--color-bg-theme);
+    color: var(--color-fg-text);
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container.flex-column{
+    flex-direction: column;
+}
+
+.flex-container.center{
+    justify-content: center;
+    align-items: center;
+}
+
+.max-parent{
+    width: 100%;
+    height: 100%;
+}
+
+.max-content{
+    width: max-content;
+}
+
+.main-container{
+
+    padding: 50px;
+
+    gap: 30px;
+
+}
+
+.main-container h1, .main-container h2{
+
+    font-family: 'Edu NSW ACT Foundation', cursive;
+
+    font-weight: 600;
+    font-size: 2.7rem;
+}
+
+.ingredients-container{
+    gap: 20px;
+}
+
+.ingredients-container h2{
+    text-decoration: underline;
+}
+
+.ingredients-container ol.list-input-ingredients{
+
+    gap: 20px;
+
+    list-style: none;
+    counter-reset: li;
+    padding-left: 0;
+
+}
+
+
+ol.list-input-ingredients li{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+ol.list-input-ingredients li::before{
+    font-size: 1.3rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    content: counter(li);
+    counter-increment: li;
+    margin-right: 10px;
+    padding: 5px 5px;
+    border: 1px solid var(--color-fg-text);
+    border-radius: 100px;
+    text-align: center;
+    font-weight: bold;
+}
+
+input.input-ingredients, textarea.input-suggestion{
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.focus-border{
+    border-radius: 15px;
+}
+
+.focus-border:focus{
+    outline: 2px solid rgb(0, 128, 0);
+}
+
+.suggestion-container{
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.suggestion-input-container{
+    position: relative;
+}
+
+.suggestion-input-container .suggestion-text{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: #494949;
+    opacity: .8;
+    
+    font-size: .7rem;
+
+    user-select: none;
+}
+
+.btn-generator{
+    padding: 10px 20px;
+    font-size: 1.7rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all .3s ease-in-out;
+    border: 2px solid transparent;
+
+    gap: 15px;
+}
+
+.btn-generator:hover{
+    border-color: var(--color-fg-text);
+}
+
+.loader{
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid purple;
+    border-radius: 100%;
+    border-bottom: none;
+    border-left: none;
+
+ }
+
+.loader.loading{
+    display: inline-block;
+    animation-name: loading;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+ }
+
+.result-recipe{
+    border: 1px solid var(--color-fg-text);
+    padding: 30px;
+    gap: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.result-recipe .result-recipe-title{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+}
+
+.result-recipe .result-recipe-image{
+    width: 512px;
+    height: 512px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.result-recipe .result-recipe-text{
+    width: 80%;
+    margin: auto;
+    font-size: 1.1rem;
+}
+
+.result-recipe .question-recipe-container{
+    width: 100%;
+    gap: 15px;
+}
+
+.result-recipe .question-recipe{
+    font-size: 1.1rem;
+    padding: 5px;
+    width: 25%;
+}
+
+.result-recipe .btn-question{
+    background-color: var(--color-bg-btn);
+    color: var(--color-bg-theme);
+    border-radius: 20px;
+    gap: 5px;
+    transition: all .3s ease-in-out;
+}
+
+.result-recipe .btn-question .icon{
+    transition: all .3s ease-in-out;
+
+}
+
+.result-recipe .btn-question:hover .icon{
+    transform: scale(1.5);
+}
+
+i.icon{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.icon.send-icon{
+    background-image: url('../images/icons/send.png');
+}
+
+.icon.reload-icon{
+    background-image: url('../images/icons/reload.png');
+}
+
+.new-responses-container{
+    gap: 20px;
+}
+
+.new-responses-container .new-response{
+    padding: 50px;
+    border: 1px solid var(--color-fg-text);
+    gap: 15px;
+}
+
+.new-responses-container .new-response .new-response-title{
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.toast.toast-error .toast-body{
+    background-color: rgb(247, 20, 20);
+    color: #fff;
+}
+
+.toast-error .toast-header{
+    background-color: rgb(245, 183, 183);
+    color: #000000;  
+}
+
+@keyframes loading {
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}
